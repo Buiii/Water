@@ -16,7 +16,7 @@ public class TestApi {
 
   YzmService<YzmBean> service = new DzapiYzmServiceImpl();
   YzmBean t = new YzmBean();
-  t.setUid("qq13125198122");
+  t.setUid("qq1106264855");
   t.setPwd("qq123456");
   t.setPid(7371);
   t.setNext_pid("7371");
