@@ -69,8 +69,4 @@ public class WaterFilter extends JFinalConfig {
 
  }
 
- public static void main(String[] args) {
-
- }
-
 }

@@ -1,7 +1,6 @@
 package com.test;
 
 
-import org.apache.http.ParseException;
 import org.junit.Test;
 
 import com.water.Api.entity.ApiBean;
@@ -12,7 +11,7 @@ import com.water.Api.service.Impl.DzapiYzmServiceImpl;
 
 public class TestApi {
  @Test
- public void Api() throws ParseException{
+ public void Api() {
 
   YzmService<YzmBean> service = new DzapiYzmServiceImpl();
   YzmBean t = new YzmBean();
