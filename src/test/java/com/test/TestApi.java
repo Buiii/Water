@@ -17,8 +17,8 @@ public class TestApi {
   YzmBean t = new YzmBean();
   t.setUid("qq1106264855");
   t.setPwd("qq123456");
-  t.setPid(7371);
-  t.setNext_pid("7371");
+  t.setPid(8597);
+  t.setNext_pid("8597");
   service.YzmLogin(t);
   service.YzmGetMobilenum(t);
   VerificationCodeApiPlugin codeApiPlugin = new VerificationCodeApiPlugin();

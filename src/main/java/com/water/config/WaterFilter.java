@@ -11,6 +11,7 @@ import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.c3p0.C3p0Plugin;
 import com.jfinal.plugin.redis.RedisPlugin;
 import com.jfinal.render.ViewType;
+import com.water.Api.controller.TestConteroller;
 
 public class WaterFilter extends JFinalConfig {
 
@@ -22,7 +23,7 @@ public class WaterFilter extends JFinalConfig {
   loadPropertyFile("config.properties");
   // TODO Auto-generated method stub
   me.setDevMode(true); // 设置是否是开发模式
-  me.setViewType(ViewType.VELOCITY); // 设置试图
+  me.setViewType(ViewType.JSP); // 设置试图
  }
 
  /**
@@ -54,18 +55,16 @@ public class WaterFilter extends JFinalConfig {
    this.getProperty("driver"));
   me.add(c3p0Plugin);
   ActiveRecordPlugin activeRecordPlugin = new ActiveRecordPlugin(c3p0Plugin);
-
  }
 
  /**
   * 配置路由
   */
  @Override
- public void configRoute(Routes arg0) {
+ public void configRoute(Routes me) {
   // TODO Auto-generated method stub
   // 采用扫描方式注入
-
-
+  me.add("/test", TestConteroller.class);
 
  }
 
