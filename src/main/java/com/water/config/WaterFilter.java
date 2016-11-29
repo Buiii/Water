@@ -12,9 +12,13 @@ import com.jfinal.plugin.c3p0.C3p0Plugin;
 import com.jfinal.plugin.redis.RedisPlugin;
 import com.jfinal.render.ViewType;
 import com.water.Api.controller.TestConteroller;
+import com.water.Api.controller.TestShiroConterller;
+
+import cn.dreampie.shiro.core.ShiroPlugin;
 
 public class WaterFilter extends JFinalConfig {
 
+ Routes routes;
  /**
   * 配置常量
   */
@@ -43,6 +47,7 @@ public class WaterFilter extends JFinalConfig {
 
  }
 
+
  /**
   * 配置插件
   */
@@ -55,6 +60,8 @@ public class WaterFilter extends JFinalConfig {
    this.getProperty("driver"));
   me.add(c3p0Plugin);
   ActiveRecordPlugin activeRecordPlugin = new ActiveRecordPlugin(c3p0Plugin);
+  // shiro权限配置
+  ShiroPlugin plugin = new ShiroPlugin(this.routes);
  }
 
  /**
@@ -63,8 +70,10 @@ public class WaterFilter extends JFinalConfig {
  @Override
  public void configRoute(Routes me) {
   // TODO Auto-generated method stub
+  this.routes = me;
   // 采用扫描方式注入
   me.add("/test", TestConteroller.class);
+  me.add("/login", TestShiroConterller.class);
 
  }
 

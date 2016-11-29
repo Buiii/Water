@@ -6,7 +6,6 @@ import com.water.Api.service.YzmService;
 
 public class ShjmptYzmServiceImpl implements YzmService<YzmBean> {
 
- @Override
  public YzmBean YzmLogin(YzmBean t) {
   // TODO Auto-generated method stub
   t.setToken(codeApiPlugin
@@ -16,7 +15,6 @@ public class ShjmptYzmServiceImpl implements YzmService<YzmBean> {
   return t;
  }
 
- @Override
  public YzmBean YzmGetMobilenum(YzmBean t) {
   t.setMobiles(codeApiPlugin.requestByGetMethod(
    new ApiBean("http://api.shjmpt.com:9002/pubApi/GetPhone?ItemId=" + t.getPid() + "&token=" + t.getToken(), "", "", false, false))
@@ -24,7 +22,6 @@ public class ShjmptYzmServiceImpl implements YzmService<YzmBean> {
   return t;
  }
 
- @Override
  public YzmBean YzmGetVcodeAndReleaseMobile(YzmBean t) {
   t.setCode(codeApiPlugin.requestByGetMethod(
    new ApiBean("http://api.shjmpt.com:9002/pubApi/GMessage?token=" + t.getToken() + "&ItemId=" + t.getPid() + "&Phone=" + t.getMobiles()[0],
@@ -33,25 +30,21 @@ public class ShjmptYzmServiceImpl implements YzmService<YzmBean> {
   return t;
  }
 
- @Override
  public YzmBean YzmGetVcodeAndHoldMobilenum(YzmBean t) {
   // TODO Auto-generated method stub
   return null;
  }
 
- @Override
  public YzmBean YzmAddIgnoreList(YzmBean t) {
   // TODO Auto-generated method stub
   return null;
  }
 
- @Override
  public YzmBean YzmGetUserInfos(YzmBean t) {
   // TODO Auto-generated method stub
   return null;
  }
 
- @Override
  public YzmBean YzmGetRecvingInfo(YzmBean t) {
   // TODO Auto-generated method stub
   return null;

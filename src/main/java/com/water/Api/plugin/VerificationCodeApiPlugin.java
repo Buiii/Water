@@ -20,6 +20,7 @@ import org.junit.Test;
 import com.water.Api.Tools.Tools;
 import com.water.Api.entity.ApiBean;
 
+
 public class VerificationCodeApiPlugin {
 
  private static Logger log = Logger.getLogger(VerificationCodeApiPlugin.class);

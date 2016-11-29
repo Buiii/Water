@@ -952,8 +952,8 @@
                     position: 'absolute',
                     top: '0px',
                     left: '0px',
-                    width: '1px',
-                    height: '1px',
+                    width: '100px',
+                    height: '100px',
                     overflow: 'hidden'
                 });
     
@@ -7667,8 +7667,8 @@
                     position: 'absolute',
                     top: '-8px',
                     left: '-8px',
-                    width: '9px',
-                    height: '9px',
+                    width: '50px',
+                    height: '50px',
                     overflow: 'hidden'
                 });
     

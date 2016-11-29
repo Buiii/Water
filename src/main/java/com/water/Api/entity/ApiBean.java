@@ -129,6 +129,10 @@ public class ApiBean {
   this.AgentBoolean = AgentBoolean;
   // System.setProperty("http.proxyHost", proxyHost); // 设置代理ip
   // System.setProperty("http.proxyPort", proxyPort); // 设置代理ip端口
+  if (proxyHost.equals("80") && proxyHost.equals("8080")) {
+   log.info(("设置代理失败:" + proxyHost + ":" + proxyPort));
+   return;
+  }
   HttpHost proxy = new HttpHost(proxyHost, Integer.parseInt(proxyPort));
   RequestConfig config = RequestConfig.custom().setProxy(proxy).build();
   this.requestConfig = config;

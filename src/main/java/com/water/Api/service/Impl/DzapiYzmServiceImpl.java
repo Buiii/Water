@@ -23,14 +23,12 @@ public class DzapiYzmServiceImpl implements YzmService<YzmBean> {
 
  private static Logger log = Logger.getLogger(DzapiYzmServiceImpl.class);
 
- @Override
  public YzmBean YzmLogin(YzmBean t) {
   // TODO Auto-generated method stub
   t.setToken(API.getInstance().loginIn(t.getUid(), t.getPwd()).getToken());
   return t;
  }
 
- @Override
  public YzmBean YzmGetMobilenum(YzmBean t) {
   // TODO Auto-generated method stub
 	 GetMultiMobilenumResp getMultiMobilenumResp= API.getInstance().getMobilenum(t.getPid(), t.getUid(), t.getToken(), t.getSize(), t.getProvince(), t.getOperator(), t.getNotProvince());
@@ -39,7 +37,6 @@ public class DzapiYzmServiceImpl implements YzmService<YzmBean> {
   return t;
  }
 
- @Override
  public YzmBean YzmGetVcodeAndReleaseMobile(YzmBean t) {
   // TODO Auto-generated method stub
   String[] mobiles = new String[t.getMobiles().length];
@@ -60,7 +57,6 @@ public class DzapiYzmServiceImpl implements YzmService<YzmBean> {
   return t;
  }
 
- @Override
  public YzmBean YzmGetVcodeAndHoldMobilenum(YzmBean t) {
   String[] Codes = new String[t.getMobiles().length];
 //  if (t.getMobiles().length > 1) {
@@ -79,7 +75,6 @@ public class DzapiYzmServiceImpl implements YzmService<YzmBean> {
   return t;
  }
 
- @Override
  public YzmBean YzmAddIgnoreList(YzmBean t) {
   // TODO Auto-generated method stub
 	 AddIgnoreListResp addIgnoreListResp=  API.getInstance().addIgnoreList(t.getPid(), StringUtils.join(t.getMobiles(), ","), t.getUid(), t.getToken());
@@ -88,14 +83,12 @@ public class DzapiYzmServiceImpl implements YzmService<YzmBean> {
   return t;
  }
 
- @Override
  public YzmBean YzmGetUserInfos(YzmBean t) {
   // TODO Auto-generated method stub
   t.setMessge(API.getInstance().getUserInfos(t.getUid(), t.getToken()).getResult());
   return t;
  }
 
- @Override
  public YzmBean YzmGetRecvingInfo(YzmBean t) {
 
   return t;
